@@ -7,8 +7,8 @@ name text NOT NULL,
 mobile text NOT NULL,
 wallet_id integer NOT NULL,
 when_created timestamp without time zone NOT NULL
--- more stuff :)
 );
+
 CREATE TABLE transfers (
 transfer_id integer PRIMARY KEY,
 u_id integer NOT NULL,
@@ -22,8 +22,8 @@ kind text NOT NULL,
 dest_mobile text,
 dest_merchant_id integer,
 when_created timestamp without time zone NOT NULL
--- more stuff :)
 );
+
 CREATE TABLE agents (
 agent_id integer PRIMARY KEY,name text,
 country text NOT NULL,
@@ -31,8 +31,8 @@ region text,
 city text,
 subcity text,
 when_created timestamp without time zone NOT NULL
--- more stuff :)
 );
+
 CREATE TABLE agent_transactions (
 atx_id integer PRIMARY KEY,
 u_id integer NOT NULL,
@@ -40,14 +40,13 @@ agent_id integer NOT NULL,
 amount numeric NOT NULL,
 fee_amount_scalar numeric NOT NULL,
 when_created timestamp without time zone NOT NULL
--- more stuff :)
 );
+
 CREATE TABLE wallets (
 wallet_id integer PRIMARY KEY,
 currency text NOT NULL,
 ledger_location text NOT NULL,
 when_created timestamp without time zone NOT NULL
--- more stuff :)
 );
 
 
@@ -84,7 +83,6 @@ ORDER BY u_id ASC
 AS net
 GROUP BY status
 ;
-
 
 --QUESTION 6
 SELECT count(atx.amount) AS "atx volume city summary"  ,ag.city 
