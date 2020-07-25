@@ -3,10 +3,10 @@
 Here is a an analysis of the transactions done through the use of WAVE APP. 
 
 The following steps were taken to answer the underlisted questions
-1. The nature of the business/ app was studied to understand the operations
-2. A sample data was collected to understand the data in the app
-3. The schema was drawn as a framework of how the tables should created
-4 Tables were created in Posgresql 
+i. The nature of the business/ app was studied to understand the operations
+ii. A sample data was collected to understand the data in the app
+iii. The schema was drawn as a framework of how the tables should created
+1v. Tables were created in Posgresql 
 
 CREATE TABLE users (
 u_id integer PRIMARY KEY,
@@ -57,7 +57,7 @@ when_created timestamp without time zone NOT NULL
 );
 
 
-5. Queries in the code  session were initiated to answer the underlisted questions.
+v. Queries in the code  session were initiated to answer the underlisted questions.
 
 1. How many users does Wave have?
 
