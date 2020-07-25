@@ -6,7 +6,7 @@ The following steps were taken to answer the underlisted questions
 1. The nature of the business/ app was studied to understand the operations
 2. A sample data was collected to understand the data in the app
 3. The schema was drawn as a framework of how the tables should created
-4. Tables were created in the Posgresql 
+4 Tables were created in Posgresql 
 
 CREATE TABLE users (
 u_id integer PRIMARY KEY,
@@ -14,8 +14,8 @@ name text NOT NULL,
 mobile text NOT NULL,
 wallet_id integer NOT NULL,
 when_created timestamp without time zone NOT NULL
--- more stuff :)
 );
+
 CREATE TABLE transfers (
 transfer_id integer PRIMARY KEY,
 u_id integer NOT NULL,
@@ -29,8 +29,8 @@ kind text NOT NULL,
 dest_mobile text,
 dest_merchant_id integer,
 when_created timestamp without time zone NOT NULL
--- more stuff :)
 );
+
 CREATE TABLE agents (
 agent_id integer PRIMARY KEY,name text,
 country text NOT NULL,
@@ -38,8 +38,8 @@ region text,
 city text,
 subcity text,
 when_created timestamp without time zone NOT NULL
--- more stuff :)
 );
+
 CREATE TABLE agent_transactions (
 atx_id integer PRIMARY KEY,
 u_id integer NOT NULL,
@@ -47,25 +47,26 @@ agent_id integer NOT NULL,
 amount numeric NOT NULL,
 fee_amount_scalar numeric NOT NULL,
 when_created timestamp without time zone NOT NULL
--- more stuff :)
 );
+
 CREATE TABLE wallets (
 wallet_id integer PRIMARY KEY,
 currency text NOT NULL,
 ledger_location text NOT NULL,
 when_created timestamp without time zone NOT NULL
--- more stuff :)
 );
 
-5. Queries in the code  session were initiated to answer the underlisted questions
 
- 
- 1. How many users does Wave have?
+5. Queries in the code  session were initiated to answer the underlisted questions.
+
+1. How many users does Wave have?
+
 2. How many transfers have been sent in the currency CFA? A transfer in Wave is when a
 user (denoted by their user id in the u_id column) sends money from their Wave account
 (often to another Wave user, but the recipient might also be a mobile number that hasn’t
 signed up for an account yet, or the sender of the transfer could be making a bill
 payment, or a few other possibilities; the `kind` column stores which possibility).
+
 3. How many different users have sent a transfer in CFA?
 4. How many agent_transactions did we have in the months of 2018 (broken down by
 month)? An agent transaction (often abbreviated atx) is when someone deposits or
